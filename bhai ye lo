@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+df = pd.read_csv('DATA-FINAL.csv')
 if os.path.isfile('My.csv'):
     print("not create again");
 else:
@@ -8,7 +9,10 @@ else:
     for i in range(df.Termid.count()):
         if i == 0:
             d.to_csv('My.csv',mode='a',header=False)
-        if df.MHRDName[i] == "Bachelor of Science(Honours)(Chemistry)" :
+        if df.MHRDName[i] == "Bachelor of Science (Honours) (Chemistry )" :
             df.iloc[i:i+1,:].to_csv('My.csv',mode='a',header=False)
         else:
             pass
+
+
+
